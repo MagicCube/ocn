@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "node index.js",
     "indexing": "node bin/indexing/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
