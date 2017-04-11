@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const INPUT_PATH = path.resolve(__dirname, '../data/raw-detailed.json');
-const OUTPUT_PATH = path.resolve(__dirname, '../data/tags.csv');
+const INPUT_PATH = path.resolve(__dirname, '../../data/raw-detailed.json');
+const OUTPUT_PATH = path.resolve(__dirname, '../../data/tags.csv');
 
 const subjects = JSON.parse(fs.readFileSync(INPUT_PATH));
 const genres = new Set();     // 类型

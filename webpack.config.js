@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/app/index.js',
+    app: './src/ocn/index.jsx',
     vendor: './src/vendor/index.js'
   },
   output: {
@@ -12,6 +12,12 @@ module.exports = {
     chunkFilename: 'assets/js/chunk.[id].js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      octicons: path.resolve(__dirname, './src/vendor/octicons')
+    }
   },
   devServer: {
     compress: true,

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const request = require('request-promise-native');
 
-const OUTPUT_PATH = path.resolve(__dirname, '../data/raw.json');
+const OUTPUT_PATH = path.resolve(__dirname, '../../data/raw.json');
 const COUNT = 250;
 
 const startIndexes = [];

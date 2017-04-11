@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const request = require('request-promise-native');
 
-const INPUT_PATH = path.resolve(__dirname, '../public/raw.json');
-const OUTPUT_PATH = path.resolve(__dirname, '../public/raw-detailed.json');
+const INPUT_PATH = path.resolve(__dirname, '../../data/raw.json');
+const OUTPUT_PATH = path.resolve(__dirname, '../../data/raw-detailed.json');
 
 const subjects = JSON.parse(fs.readFileSync(INPUT_PATH));
 let subjectIndex = 0;

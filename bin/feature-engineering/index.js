@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const INPUT_RAW_PATH = path.resolve(__dirname, '../data/raw-detailed.json');
-const INPUT_TAG_PATH = path.resolve(__dirname, '../data/tags.csv');
-const OUTPUT_ENCODINDG_PATH = path.resolve(__dirname, '../data/encoding.csv');
-const OUTPUT_PATH = path.resolve(__dirname, '../data/movies.json');
+const INPUT_RAW_PATH = path.resolve(__dirname, '../../data/raw-detailed.json');
+const INPUT_TAG_PATH = path.resolve(__dirname, '../../data/tags.csv');
+const OUTPUT_ENCODINDG_PATH = path.resolve(__dirname, '../../data/encoding.csv');
+const OUTPUT_PATH = path.resolve(__dirname, '../../data/movies.json');
 
 const tags = fs.readFileSync(INPUT_TAG_PATH).toString().split('\n');
 const subjects = JSON.parse(fs.readFileSync(INPUT_RAW_PATH));
