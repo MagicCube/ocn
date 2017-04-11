@@ -2,11 +2,9 @@ import React from 'react';
 
 import MovieCover from './MovieCover';
 
-export default class MovieCoverList extends React.Component {
-  static propTypes = {
-    data: React.PropTypes.array.isRequired
-  }
+import '../res/movie-cover-list.less';
 
+export default class MovieCoverList extends React.Component {
   render() {
     const items = this.props.data.map(movie => (
       <li key={movie.id}>

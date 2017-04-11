@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "indexing": "node bin/indexing/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.2",
-    "request": "^2.81.0",
-    "request-promise-native": "^1.0.3"
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -37,12 +37,14 @@
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
-    "jquery": "^3.1.1",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "normalize.css": "^5.0.0",
+    "prop-types": "^15.5.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
