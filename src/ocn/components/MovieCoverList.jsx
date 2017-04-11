@@ -7,15 +7,15 @@ import '../res/movie-cover-list.less';
 
 export default class MovieCoverList extends React.Component {
   async selectMovie(movie) {
-    await selectMovie(movie.id);
     movie.selected = true;
     this.forceUpdate();
+    await selectMovie(movie.id);
   }
 
   async deselectMovie(movie) {
-    await deselectMovie(movie.id);
     movie.selected = false;
     this.forceUpdate();
+    await deselectMovie(movie.id);
   }
 
   handleMovieClick(movie) {
@@ -28,15 +28,15 @@ export default class MovieCoverList extends React.Component {
 
   render() {
     const items = this.props.data.map(movie => (
-      <li key={movie.id} className={movie.selected ? 'selected' : null} onClick={() => this.handleMovieClick(movie)}>
+      <div key={movie.id} className={movie.selected ? 'list-item selected' : 'list-item'} onClick={() => this.handleMovieClick(movie)}>
         <MovieCover data={movie} />
         {movie.selected ? <div className="check" /> : null}
-      </li>
+      </div>
     ));
     return (
-      <ul className="ocn-movie-cover-list">
-        {items}
-      </ul>
+      <div className="ocn-movie-cover-list">
+        <span>{items}</span>
+      </div>
     );
   }
 }

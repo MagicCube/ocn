@@ -9,6 +9,7 @@ let _batch = null;
 
 export async function nextBatch() {
   if (!_loaded) {
+    //localStorage.clear();
     await loadIndex();
   }
   if (_batch) {
@@ -21,10 +22,12 @@ export async function nextBatch() {
 
 export async function selectMovie(id) {
   await post(`/api/select/${id}`);
+  saveIndex();
 }
 
 export async function deselectMovie(id) {
   await post(`/api/deselect/${id}`);
+  saveIndex();
 }
 
 
