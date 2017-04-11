@@ -6,11 +6,26 @@
   padding: 0;
   width: 100%;
   justify-content: center;
-  margin-bottom: 75px;
+  margin-bottom: 76px;
 
   li {
     width: 100px;
     margin: 6px;
     padding: 0;
+    position: relative;
+  }
+
+  li.selected {
+    .check {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      background: url(images/check.png) no-repeat;
+      background-size: cover;
+      bottom: 8px;
+      right: 8px;
+      opacity: 80%;
+      border-radius: 50%;
+    }
   }
 }
