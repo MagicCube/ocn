@@ -2,7 +2,7 @@ import React from 'react';
 
 import BottomBar from '../components/BottomBar';
 import MovieCoverList from '../components/MovieCoverList';
-import { nextBatch } from '../logic/service';
+import * as service from '../logic/service';
 
 export default class Application extends React.PureComponent {
   constructor(props) {
@@ -12,8 +12,12 @@ export default class Application extends React.PureComponent {
     };
   }
 
-  async componentDidMount() {
-    const movies = await nextBatch();
+  componentDidMount() {
+    this.nextBatch();
+  }
+
+  async nextBatch() {
+    const movies = await service.nextBatch();
     this.setState({ movies: movies.slice(0, 20) });
   }
 
@@ -21,7 +25,7 @@ export default class Application extends React.PureComponent {
     return (
       <div className="ocn-app">
         <MovieCoverList data={this.state.movies ? this.state.movies : []} />
-        <BottomBar />
+        <BottomBar onNextBatchButtonClick={() => this.nextBatch()} />
       </div>
     );
   }

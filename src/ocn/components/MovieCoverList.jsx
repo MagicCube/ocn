@@ -7,7 +7,7 @@ import '../res/movie-cover-list.less';
 export default class MovieCoverList extends React.Component {
   render() {
     const items = this.props.data.map(movie => (
-      <li key={movie.id}>
+      <li key={movie.id} onClick={() => { }}>
         <MovieCover data={movie} />
       </li>
     ));
