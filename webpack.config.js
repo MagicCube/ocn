@@ -4,7 +4,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/ocn/index.jsx',
+    poll: './src/ocn/app/PollApp.jsx',
+    cluster: './src/ocn/app/ClusterApp.jsx',
     vendor: './src/vendor/index.js'
   },
   output: {
