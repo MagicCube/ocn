@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MovieCover from './MovieCover';
-import { deselectMovie, selectMovie } from '../logic/service';
+import { deselectMovie, selectMovie } from '../logic/poll-service';
 
 import '../res/movie-cover-list.less';
 
@@ -29,13 +29,13 @@ export default class MovieCoverList extends React.Component {
   render() {
     const items = this.props.data.map(movie => (
       <div key={movie.id} className={movie.selected ? 'list-item selected' : 'list-item'} onClick={() => this.handleMovieClick(movie)}>
-        <MovieCover data={movie} />
+        <MovieCover data={movie} displayTitle={this.props.displayTitle} />
         {movie.selected ? <div className="check" /> : null}
       </div>
     ));
     return (
       <div className="ocn-movie-cover-list">
-        <span>{items}</span>
+        {items}
       </div>
     );
   }
