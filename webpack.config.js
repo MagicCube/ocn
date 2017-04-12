@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     poll: './src/ocn/app/PollApp.jsx',
     cluster: './src/ocn/app/ClusterApp.jsx',
+    top25: './src/ocn/app/Top25App.jsx',
     vendor: './src/vendor/index.js'
   },
   output: {
