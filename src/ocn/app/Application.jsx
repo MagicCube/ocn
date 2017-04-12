@@ -17,6 +17,7 @@ export default class Application extends React.PureComponent {
   }
 
   async nextBatch() {
+    document.body.scrollTop = 0;
     const movies = await service.nextBatch();
     this.setState({ movies: movies.slice(0, 20) });
   }
