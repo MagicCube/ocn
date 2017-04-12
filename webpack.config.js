@@ -64,7 +64,7 @@ module.exports = {
         use: [
           'file-loader?name=[name].html',
           'extract-loader',
-          'html-loader'
+          'html-loader?removeAttributeQuotes=false'
         ]
       }
     ]
