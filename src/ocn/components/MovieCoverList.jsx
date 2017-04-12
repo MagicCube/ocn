@@ -1,28 +1,13 @@
 import React from 'react';
 
 import MovieCover from './MovieCover';
-import { deselectMovie, selectMovie } from '../logic/poll-service';
 
 import '../res/movie-cover-list.less';
 
 export default class MovieCoverList extends React.Component {
-  async selectMovie(movie) {
-    movie.selected = true;
-    this.forceUpdate();
-    await selectMovie(movie.id);
-  }
-
-  async deselectMovie(movie) {
-    movie.selected = false;
-    this.forceUpdate();
-    await deselectMovie(movie.id);
-  }
-
   handleMovieClick(movie) {
-    if (!movie.selected) {
-      this.selectMovie(movie);
-    } else {
-      this.deselectMovie(movie);
+    if (typeof(this.props.onMovieClick) === 'function') {
+      this.props.onMovieClick(movie);
     }
   }
 

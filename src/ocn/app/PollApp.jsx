@@ -27,10 +27,33 @@ export default class PollApp extends React.PureComponent {
     this.setState({ movies: movies.slice(0, 20) });
   }
 
+  async selectMovie(movie) {
+    movie.selected = true;
+    this.forceUpdate();
+    await service.selectMovie(movie.id);
+  }
+
+  async deselectMovie(movie) {
+    movie.selected = false;
+    this.forceUpdate();
+    await service.deselectMovie(movie.id);
+  }
+
+  handleMovieClick(movie) {
+    if (!movie.selected) {
+      this.selectMovie(movie);
+    } else {
+      this.deselectMovie(movie);
+    }
+  }
+
   render() {
     return (
       <div className="ocn-poll-app">
-        <MovieCoverList data={this.state.movies ? this.state.movies : []} />
+        <MovieCoverList
+          data={this.state.movies ? this.state.movies : []}
+          onMovieClick={movie => this.handleMovieClick(movie)}
+        />
         <BottomBar onNextBatchButtonClick={() => this.nextBatch()} />
       </div>
     );
