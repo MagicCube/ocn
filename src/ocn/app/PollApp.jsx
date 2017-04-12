@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import BottomBar from '../components/BottomBar';
 import MovieCoverList from '../components/MovieCoverList';
-import { nextBatch } from '../logic/poll-service';
+import * as service from '../logic/poll-service';
 
 import '../index.html';
 import '../res/index.less';
@@ -23,7 +23,7 @@ export default class PollApp extends React.PureComponent {
 
   async nextBatch() {
     document.body.scrollTop = 0;
-    const movies = await nextBatch();
+    const movies = await service.nextBatch();
     this.setState({ movies: movies.slice(0, 20) });
   }
 
