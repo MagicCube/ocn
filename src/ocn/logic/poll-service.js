@@ -40,7 +40,7 @@ export async function deselectMovie(id) {
 
 
 async function loadIndex() {
-  if (localStorage.getItem(MOVIE_INDEX_KEY) !== null) {
+  if (localStorage.getItem(MOVIE_INDEX_KEY) !== null && localStorage.getItem(MOVIE_INDEX_KEY) !== 'null') {
     _movies = JSON.parse(localStorage.getItem(MOVIE_INDEX_KEY));
     _movies2 = JSON.parse(localStorage.getItem(MOVIE_INDEX_KEY2));
   } else {
